@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserMaintenance.Entities;
+using System.IO;
 
 namespace UserMaintenance
 {
@@ -17,9 +18,9 @@ namespace UserMaintenance
         public Form1()
         {
             InitializeComponent();
-            label1.Text = Resource1.LastName; 
-            label2.Text = Resource1.FirstName; 
+            label1.Text = Resource1.FullName; 
             button1.Text = Resource1.Add;
+            button2.Text = Resource1.WriteToFile;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
@@ -30,11 +31,23 @@ namespace UserMaintenance
         {
             var u = new User()
             {
-                LastName = textBox1.Text,
-                FirstName = textBox2.Text
-
+                FullName = textBox1.Text
             };
             users.Add(u);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            sfd.RestoreDirectory = true;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter sw = new StreamWriter(sfd.OpenFile());
+                    foreach (User u in users)
+                        sw.WriteLine("ID:" + u.ID + " Név:" + u.FullName);
+                sw.Close();
+            }
         }
     }
 }
