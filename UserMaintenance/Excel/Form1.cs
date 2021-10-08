@@ -65,7 +65,7 @@ namespace Excel
                 values[counter, 5] = f.NumberOfRooms;
                 values[counter, 6] = f.FloorArea;
                 values[counter, 7] = f.Price;
-                values[counter, 8] = "";
+                values[counter, 8] = "=" + GetCell(counter+2 , 8) + "*1000000/" + GetCell(counter + 2,7);
                 counter++;
             }
 
@@ -73,6 +73,26 @@ namespace Excel
             GetCell(2, 1),
             GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;
 
+
+            ExcelR.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
+            headerRange.Font.Bold = true;
+            headerRange.VerticalAlignment = ExcelR.XlVAlign.xlVAlignCenter;
+            headerRange.HorizontalAlignment = ExcelR.XlHAlign.xlHAlignCenter;
+            headerRange.EntireColumn.AutoFit();
+            headerRange.RowHeight = 40;
+            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.BorderAround2(ExcelR.XlLineStyle.xlContinuous, ExcelR.XlBorderWeight.xlThick);
+
+            ExcelR.Range tableRange = xlSheet.get_Range(GetCell(2, 1), GetCell(1+values.GetLength(0), values.GetLength(1)));
+            tableRange.BorderAround2(ExcelR.XlLineStyle.xlContinuous, ExcelR.XlBorderWeight.xlThick);
+
+            ExcelR.Range firstColumn = xlSheet.get_Range(GetCell(2, 1), GetCell(1 + values.GetLength(0),1));
+            firstColumn.Font.Bold = true;
+            firstColumn.Interior.Color = Color.LightYellow;
+
+            ExcelR.Range lastColumn = xlSheet.get_Range(GetCell(2, values.GetLength(1)), GetCell(1 + values.GetLength(0), values.GetLength(1)));
+            lastColumn.Interior.Color = Color.LightGreen;
+            lastColumn.NumberFormat = "###,###.00";
         }
 
         private string GetCell(int x, int y)
