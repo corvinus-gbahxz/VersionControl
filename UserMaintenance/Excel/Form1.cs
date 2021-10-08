@@ -24,6 +24,8 @@ namespace Excel
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+            CreateExcel();
         }
 
         private void LoadData()
