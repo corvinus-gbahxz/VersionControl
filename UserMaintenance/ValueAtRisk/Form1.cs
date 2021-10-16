@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ValueAtRisk.Entities;
+using System.IO;
 
 namespace ValueAtRisk
 {
@@ -66,6 +67,21 @@ namespace ValueAtRisk
                 value += (decimal)last.Price * item.Volume;
             }
             return value;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            sfd.RestoreDirectory = true;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter sw = new StreamWriter(sfd.OpenFile());
+                sw.WriteLine("Időszak\tNyereség");
+                foreach (var pi in portfolioItems)
+                    sw.WriteLine(pi.Index +"\t"+ pi.Volume);
+                sw.Close();
+            }
         }
     }
 }
