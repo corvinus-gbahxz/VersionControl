@@ -18,16 +18,13 @@ namespace Arfolyam
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
         BindingList<string> Currencies = new BindingList<string>();
-        
+
         public Form1()
         {
             InitializeComponent();
-            comboBox1.DataSource = Currencies;
-
-            RefreshData();
         }
 
-        private string GetExchangeRates()
+        private string CallWebService()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
@@ -43,20 +40,6 @@ namespace Arfolyam
             var result = response.GetExchangeRatesResult;
             return result;
         }
-
-        private string GetCurrencies()
-        {
-            var mnbService = new MNBArfolyamServiceSoapClient();
-
-            var request = new GetCurrenciesRequestBody();
-
-            var response = mnbService.GetCurrencies(request);
-
-            var result = response.GetCurrenciesResult;
-
-            return result;
-        }
-
 
         private void ProcXML(string result)
         {
@@ -75,7 +58,6 @@ namespace Arfolyam
                 var value = decimal.Parse(childElement.InnerText);
                 if (unit != 0)
                     rate.Value = value / unit;
-
             }
         }
 
@@ -101,7 +83,7 @@ namespace Arfolyam
         private void RefreshData()
         {
             Rates.Clear();
-            ProcXML(GetExchangeRates());
+            ProcXML(CallWebService());
             dataGridView1.DataSource = Rates;
             PlotData();
         }
