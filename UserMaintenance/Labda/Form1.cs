@@ -75,7 +75,7 @@ namespace Labda
             if (_nextToy != null)
                 Controls.Remove(_nextToy);
             _nextToy = Factory.CreateNew();
-            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
+            _nextToy.Top = lblNext.Top + lblNext.Height + 40;
             _nextToy.Left = lblNext.Left;
             Controls.Add(_nextToy);
         }

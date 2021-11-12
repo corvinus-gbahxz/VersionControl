@@ -40,28 +40,19 @@ namespace Labda
             this.button1 = new System.Windows.Forms.Button();
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
-            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.button6);
-            this.mainPanel.Controls.Add(this.button5);
-            this.mainPanel.Controls.Add(this.button4);
-            this.mainPanel.Controls.Add(this.button3);
-            this.mainPanel.Controls.Add(this.lblNext);
-            this.mainPanel.Controls.Add(this.button2);
-            this.mainPanel.Controls.Add(this.button1);
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(800, 450);
+            this.mainPanel.Size = new System.Drawing.Size(1344, 141);
             this.mainPanel.TabIndex = 0;
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.ForestGreen;
-            this.button6.Location = new System.Drawing.Point(252, 398);
+            this.button6.Location = new System.Drawing.Point(191, 428);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(123, 29);
             this.button6.TabIndex = 6;
@@ -71,7 +62,7 @@ namespace Labda
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Maroon;
-            this.button5.Location = new System.Drawing.Point(399, 398);
+            this.button5.Location = new System.Drawing.Point(338, 428);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(123, 29);
             this.button5.TabIndex = 5;
@@ -80,7 +71,7 @@ namespace Labda
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(104, 387);
+            this.button4.Location = new System.Drawing.Point(43, 417);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(131, 51);
             this.button4.TabIndex = 4;
@@ -91,7 +82,7 @@ namespace Labda
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button3.Location = new System.Drawing.Point(252, 328);
+            this.button3.Location = new System.Drawing.Point(191, 358);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 29);
             this.button3.TabIndex = 3;
@@ -101,7 +92,7 @@ namespace Labda
             // lblNext
             // 
             this.lblNext.AutoSize = true;
-            this.lblNext.Location = new System.Drawing.Point(638, 244);
+            this.lblNext.Location = new System.Drawing.Point(518, 260);
             this.lblNext.Name = "lblNext";
             this.lblNext.Size = new System.Drawing.Size(89, 17);
             this.lblNext.TabIndex = 2;
@@ -109,7 +100,7 @@ namespace Labda
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(104, 317);
+            this.button2.Location = new System.Drawing.Point(43, 347);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 51);
             this.button2.TabIndex = 1;
@@ -119,7 +110,7 @@ namespace Labda
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(104, 244);
+            this.button1.Location = new System.Drawing.Point(43, 274);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 51);
             this.button1.TabIndex = 0;
@@ -143,13 +134,19 @@ namespace Labda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1344, 726);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.lblNext);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.mainPanel.ResumeLayout(false);
-            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
