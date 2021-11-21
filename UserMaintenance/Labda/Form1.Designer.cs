@@ -44,7 +44,7 @@ namespace Labda
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Location = new System.Drawing.Point(0, 69);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1344, 141);
             this.mainPanel.TabIndex = 0;
