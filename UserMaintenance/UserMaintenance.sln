@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labda", "Labda\Labda.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestExample", "UnitTestExample\UnitTestExample.csproj", "{F1FBDBB6-FEBA-421B-A647-484ED380E500}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestExample.Test", "UnitTestExample.Test\UnitTestExample.Test.csproj", "{F26D2A51-D8C2-4B76-96C5-110177DC6D8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F1FBDBB6-FEBA-421B-A647-484ED380E500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1FBDBB6-FEBA-421B-A647-484ED380E500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1FBDBB6-FEBA-421B-A647-484ED380E500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26D2A51-D8C2-4B76-96C5-110177DC6D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26D2A51-D8C2-4B76-96C5-110177DC6D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26D2A51-D8C2-4B76-96C5-110177DC6D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26D2A51-D8C2-4B76-96C5-110177DC6D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
